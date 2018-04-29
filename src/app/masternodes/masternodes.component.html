@@ -1,9 +1,14 @@
-<div class="input-group mb-3 ml-2">
+<div class="ml-2">
+  <h1>Masternodes</h1>
+</div>
+
+<div class="input-group mb-3 ml-2 mt-2">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">Search</span>
   </div>
   <input [(ngModel)]="search" (keyup)="onSearchChanged()" type="text" class="form-control">
 </div>
+
 <div>
   <table class="table table-striped table-hover table-sm">
     <thead class="thead-light">
@@ -13,21 +18,19 @@
         <th>Address</th>
         <th>Status</th>
         <th>Connected</th>
-        <th>Protocol</th>
-        <th>Balance</th>
         <th>Active</th>
+        <th>Last Seen</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let masternode of masternodes">
-        <td>{{masternode.nodeId}}</td>
+        <td><a routerLink="/{{masternode.nodeId}}" title="{{masternode.nodeId}}">{{ masternode.nodeId | slice:0:12 }}...</a></td>
         <td>{{masternode.pubKey}}</td>
         <td>{{masternode.address}}</td>
         <td>{{masternode.status}}</td>
-        <td>{{masternode.connectionTest.connected}}</td>
-        <td>{{masternode.protocol}}</td>
-        <td>{{masternode.balance}}</td>
+        <td>{{masternode.connectionTest?.connected}}</td>
         <td>{{masternode.activeDuration}}</td>
+        <td>{{masternode.lastSeen}}</td>
       </tr>
     </tbody>
   </table>

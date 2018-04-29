@@ -8,16 +8,20 @@ import { MasternodeService } from './masternode.service';
 
 import { AppComponent } from './app.component';
 import { MasternodesComponent } from './masternodes/masternodes.component';
+import { MasternodeDetailComponent } from './masternode-detail/masternode-detail.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MasternodesComponent
+    MasternodesComponent,
+    MasternodeDetailComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [
     ApiService,

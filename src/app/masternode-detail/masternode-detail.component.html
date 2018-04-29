@@ -1,0 +1,50 @@
+<div class="ml-2">
+  <h1>Masternode</h1>
+</div>
+
+<table *ngIf="masternode" class="table">
+  <tr>
+    <td>Id</td>
+    <td>{{ masternode.nodeId }}</td>
+  </tr>
+  <tr>
+    <td>PubKey</td>
+    <td>{{ masternode.pubKey }}</td>
+  </tr>
+  <tr>
+    <td>Address</td>
+    <td>{{ masternode.address }}</td>
+  </tr>
+  <tr>
+    <td>Status</td>
+    <td>{{ masternode.status }}</td>
+  </tr>
+  <tr>
+    <td>Connection Test</td>
+    <td>{{ masternode.connectionTest?.connected }} (as of {{ masternode.connectionTest?.testedAt }})</td>
+  </tr>
+  <tr>
+    <td>Balance</td>
+    <td>{{ masternode.balance }}</td>
+  </tr>
+  <tr>
+    <td>Rank</td>
+    <td>{{ masternode.rank }}</td>
+  </tr>
+  <tr>
+    <td>Location</td>
+    <td>{{ masternode.location?.countryName }}</td>
+  </tr>
+  <tr>
+    <td>Active Duration</td>
+    <td>{{ masternode.activeDuration }}</td>
+  </tr>
+  <tr>
+    <td>Last Seen</td>
+    <td>{{ masternode.lastSeen }}</td>
+  </tr>
+  <tr>
+    <td>Protocol</td>
+    <td>{{ masternode.protocol }}</td>
+  </tr>
+</table>
