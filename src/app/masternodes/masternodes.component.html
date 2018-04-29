@@ -19,7 +19,7 @@
   <input [(ngModel)]="search" (keyup)="onSearchChanged()" type="text" class="form-control">
 </div>
 
-<div>
+<div class="table-responsive">
   <table class="table table-striped table-hover table-sm">
     <thead class="thead-light">
       <tr>
@@ -39,7 +39,7 @@
         <td>{{masternode.address}}</td>
         <td>{{masternode.status}}</td>
         <td>{{masternode.connectionTest?.connected}}</td>
-        <td>{{masternode.activeDuration}}</td>
+        <td class="text-nowrap">{{masternode.activeDuration}}</td>
         <td>{{masternode.lastSeen}}</td>
       </tr>
     </tbody>
