@@ -23,4 +23,8 @@ export class MasternodeDetailComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.masternode = await this.masternodeService.get(id);
   }
+
+  onBack() {
+    this.location.back();
+  }
 }

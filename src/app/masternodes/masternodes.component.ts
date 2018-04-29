@@ -12,6 +12,8 @@ import { MasternodeService } from '../masternode.service';
 })
 export class MasternodesComponent implements OnInit {
   masternodes: Masternode[];
+  masternodeCount: number;
+  donateAddress: string;
   search: string;
   modelChanged = new Subject();
 
@@ -23,12 +25,23 @@ export class MasternodesComponent implements OnInit {
       });
   }
 
-  async ngOnInit() {
+  ngOnInit() {
     this.getMasternodes();
+    this.getMasternodeCount();
+    this.getDonateAddress();
   }
 
   async getMasternodes() {
     this.masternodes = await this.masternodeService.list(this.search);
+  }
+
+  async getMasternodeCount() {
+    this.masternodeCount = await this.masternodeService.getCount();
+    console.log(this.masternodeCount);
+  }
+
+  getDonateAddress() {
+    this.donateAddress = 'iFzmPYhaSK3LN8v6NCxfVYjY2DeH1oowd1';
   }
 
   onSearchChanged() {

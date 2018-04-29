@@ -15,4 +15,8 @@ export class MasternodeService {
   async get(id: string) {
     return await this.apiService.send<Masternode>('masternode.get', { nodeId: id });
   }
+
+  async getCount() {
+    return await this.apiService.send<number>('masternode.getCount', null);
+  }
 }
