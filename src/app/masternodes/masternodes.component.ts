@@ -37,7 +37,6 @@ export class MasternodesComponent implements OnInit {
 
   async getMasternodeCount() {
     this.masternodeCount = await this.masternodeService.getCount();
-    console.log(this.masternodeCount);
   }
 
   getDonateAddress() {

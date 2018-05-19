@@ -1,6 +1,8 @@
 <div class="ml-2">
-  <h1>Masternode Details</h1>
+  <h2>Masternode Details</h2>
 </div>
+
+<i *ngIf="masternode == null" class="fas fa-spinner fa-pulse fa-4x"></i>
 
 <table *ngIf="masternode" class="table">
   <tr>
@@ -48,5 +50,3 @@
     <td>{{ masternode.protocol }}</td>
   </tr>
 </table>
-
-<input type="button" value="Back" (click)="onBack()" class="btn btn-primary ml-2" >
